@@ -1,6 +1,6 @@
 class MyBook : Book
 {
-    public int m_Price;
+    private int m_Price;
     
     public MyBook(string p_Title, string p_Author, int p_Price) : base(p_Title, p_Author)
     {
