@@ -1,5 +1,5 @@
 # hackerrank
-Hackerrank's challenges solution
+Hackerrank's challenges solution in C#
 
 this is my code for the challenges.
 
