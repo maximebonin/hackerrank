@@ -5,7 +5,7 @@ public class Solution {
     public static void main(String[] args) {
             Scanner sc=new Scanner(System.in);
             System.out.println("================================");
-            for(int i=0;i<3;i  )
+            for(int i=0;i<3;i++)
             {
                 String s1=sc.next();
                 int x=sc.nextInt();
@@ -13,15 +13,15 @@ public class Solution {
                 
                 String space="";
                 
-                for(int j = 0 ; j< 15 - s1.length() ; j  )
+                for(int j = 0 ; j< 15 - s1.length() ; j++  )
                 {
-                    space  =" ";
+                    space  +=" ";
                 }
                 
-                String formatted = String.format("d", x);
+                String formatted = String.format("%03d", x);
                 
                 
-                System.out.println(s1 space formatted);
+                System.out.println(s1+space+formatted);
             }
             System.out.println("================================");
 
