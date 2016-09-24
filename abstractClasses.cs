@@ -4,7 +4,6 @@ class MyBook : Book
     
     public MyBook(string p_Title, string p_Author, int p_Price) : base(p_Title, p_Author)
     {
-        
         this.m_Price = p_Price;
     }
     
