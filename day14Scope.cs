@@ -6,10 +6,10 @@
 
     public void computeDifference()
     {
-        for(int i = 0 ; i < elements.Length ; i++)
+        for(int i = 0 ; i < this.elements.Length ; i++)
         {
             int difference;
-            for(int j = 0 ; j < elements.Length ; j++)
+            for(int j = 0 ; j < this.elements.Length ; j++)
             {
                 difference = this.elements[i] - this.elements[j];
                 difference = Math.Abs(difference);
