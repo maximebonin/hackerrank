@@ -15,7 +15,7 @@ for x in listNumbers[::-1]:  # the loop is in reverse order
     if(x >= largestNumber):
         largestNumber = x
     else:
-        if(x >= secondLargestNumber):
+        if(x > secondLargestNumber):
             secondLargestNumber = x
         else:
             break
