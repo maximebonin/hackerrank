@@ -13,3 +13,8 @@ for x in range (length -1):
 finalString += a[len(a)-1] #the last item-word
 
 print(finalString)
+
+
+#Actual answer is : 
+
+# print "-".join(raw_input().split())
