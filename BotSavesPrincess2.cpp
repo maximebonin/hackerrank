@@ -18,7 +18,7 @@ void otherMoves(int PrincessVertical, int PrincessHorizontal, int BotVertical, i
       cout << "RIGHT" << endl;
   }
 
-  while ((BotVertical != PrincessVertical) && (BotHorizontal != PrincessHorizontal)){
+  if ((BotVertical != PrincessVertical) && (BotHorizontal != PrincessHorizontal)){
       otherMoves(PrincessVertical, PrincessHorizontal, BotVertical, BotHorizontal);
   }    
 }
@@ -28,16 +28,16 @@ void nextMove(int n, int r, int c, vector <string> grid){
   int vertical = 0;
   int horizontal = 0;
 
-  //  f... Big O for this one ; i'm tired
-  //  
-  for(int i=0; i < n; i++){
-      string inspectedString = grid[i];
-    for(int j=0; j < n; j++){
-        if( inspectedString[j] == 'p'){
-            vertical = i;
-            horizontal = j;
-        }    
-    }   
+  bool found = false;
+    
+  for(vertical =0; vertical < n; vertical++){
+      string str(grid[vertical]);
+      string::size_type position = str.find('p');
+      
+      if((position >=0) && (position <= n)){
+          horizontal = position;
+          break;
+      }
   }
   
   if (vertical < r){
