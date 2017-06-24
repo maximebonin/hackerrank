@@ -3,25 +3,6 @@
 #include <string>
 using namespace std;
 
-void otherMoves(int PrincessVertical, int PrincessHorizontal, int BotVertical, int BotHorizontal){
-  if (PrincessVertical < BotVertical){
-      BotVertical--;
-      cout << "UP" << endl;
-  }else if (PrincessVertical > BotVertical){
-      BotVertical++;
-      cout << "DOWN" << endl;
-  }else if (PrincessHorizontal < BotHorizontal){
-      BotHorizontal--;
-      cout << "LEFT" << endl;
-  }else if (PrincessHorizontal > BotHorizontal){
-      BotHorizontal++;
-      cout << "RIGHT" << endl;
-  }
-
-  if ((BotVertical != PrincessVertical) && (BotHorizontal != PrincessHorizontal)){
-      otherMoves(PrincessVertical, PrincessHorizontal, BotVertical, BotHorizontal);
-  }    
-}
 
 void nextMove(int n, int r, int c, vector <string> grid){
 
@@ -30,16 +11,21 @@ void nextMove(int n, int r, int c, vector <string> grid){
 
   bool found = false;
     
-  for(vertical =0; vertical < n; vertical++){
-      string str(grid[vertical]);
-      string::size_type position = str.find('p');
-      
-      if((position >=0) && (position <= n)){
-          horizontal = position;
+  for(int i =0; i < n; i++){
+      if (found){
           break;
       }
+      string line = grid[i];
+      for(int j = 0; j < n; j++){
+          if( line[j] == 'p' ){
+            vertical = i;
+            horizontal = j;
+            found = true;
+            break;
+          }
+      }
   }
-  
+    
   if (vertical < r){
       r--;
       cout << "UP" << endl;
@@ -52,10 +38,6 @@ void nextMove(int n, int r, int c, vector <string> grid){
   }else if (horizontal > c){
       c++;
       cout << "RIGHT" << endl;
-  }
-
-  if ((r != vertical) && (c != horizontal)){
-      otherMoves(vertical, horizontal, r, c);
   }
 }
 int main(void) {
