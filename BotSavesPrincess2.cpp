@@ -2,6 +2,27 @@
 #include <vector>
 #include <string>
 using namespace std;
+
+void otherMoves(int PrincessVertical, int PrincessHorizontal, int BotVertical, int BotHorizontal){
+  if (PrincessVertical < BotVertical){
+      BotVertical--;
+      cout << "UP" << endl;
+  }else if (PrincessVertical > BotVertical){
+      BotVertical++;
+      cout << "DOWN" << endl;
+  }else if (PrincessHorizontal < BotHorizontal){
+      BotHorizontal--;
+      cout << "LEFT" << endl;
+  }else{
+      BotHorizontal++;
+      cout << "RIGHT" << endl;
+  }
+
+  while ((BotVertical != PrincessVertical) && (BotHorizontal != PrincessHorizontal)){
+      otherMoves(PrincessVertical, PrincessHorizontal, BotVertical, BotHorizontal);
+  }    
+}
+
 void nextMove(int n, int r, int c, vector <string> grid){
 
   int vertical = 0;
@@ -33,8 +54,8 @@ void nextMove(int n, int r, int c, vector <string> grid){
       cout << "RIGHT" << endl;
   }
 
-  while ((r != vertical) && (c != horizontal)){
-      nextMove(n, r, c, grid);
+  if ((r != vertical) && (c != horizontal)){
+      otherMoves(vertical, horizontal, r, c);
   }
 }
 int main(void) {
