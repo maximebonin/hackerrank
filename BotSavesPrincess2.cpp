@@ -13,7 +13,7 @@ void otherMoves(int PrincessVertical, int PrincessHorizontal, int BotVertical, i
   }else if (PrincessHorizontal < BotHorizontal){
       BotHorizontal--;
       cout << "LEFT" << endl;
-  }else{
+  }else if (PrincessHorizontal > BotHorizontal){
       BotHorizontal++;
       cout << "RIGHT" << endl;
   }
@@ -49,7 +49,7 @@ void nextMove(int n, int r, int c, vector <string> grid){
   }else if (horizontal < c){
       c--;
       cout << "LEFT" << endl;
-  }else{
+  }else if (horizontal > c){
       c++;
       cout << "RIGHT" << endl;
   }
