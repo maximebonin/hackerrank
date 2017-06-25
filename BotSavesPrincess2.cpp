@@ -12,9 +12,7 @@ void nextMove(int n, int r, int c, vector <string> grid){
   bool found = false;
     
   for(int i =0; i < n; i++){
-      if (found){
-          break;
-      }
+      
       string line = grid[i];
       for(int j = 0; j < n; j++){
           if( line[j] == 'p' ){
@@ -23,6 +21,9 @@ void nextMove(int n, int r, int c, vector <string> grid){
             found = true;
             break;
           }
+          if (found){
+          break;
+      	  }
       }
   }
     
